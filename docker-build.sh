@@ -32,7 +32,7 @@ else
     exit 1
 fi
 
-docker build -t $NAME_TAG --build-arg RUNTIME_IMAGE=$RUNTIME_IMAGE .
+docker build -t xolvegroup/prodxolve --build-arg RUNTIME_IMAGE=$RUNTIME_IMAGE .
 
 if [ -d META-INF ]; then rm -Rf META-INF; fi
 if [ -d WEB-INF ]; then rm -Rf WEB-INF; fi
