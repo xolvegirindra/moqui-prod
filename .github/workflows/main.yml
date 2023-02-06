@@ -19,8 +19,7 @@ jobs:
       
     - name: Component add in moqui
       run:
-       ./gradlew getComponent -Pcomponent=HiveMind
-       git clone https://github.com/xolvegroup/Sales.git  
+       ./gradlew getComponent -Pcomponent=HiveMind 
       
     -
      name: Login to Docker Hub
