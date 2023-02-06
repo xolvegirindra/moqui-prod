@@ -30,6 +30,18 @@ jobs:
        cd runtime/lib/
        echo Download Jar files
        wget https://jdbc.postgresql.org/download/postgresql-42.2.9.jar
+       echo back to Moqui
+       cd
+       echo Download OpenSearch
+       ./gradlew downloadOpenSearch
+       echo build moqui
+        ./gradlew build
+        echo load Moqui
+        ./gradlew load
+        echo Add runtime
+        ./gradlew addRuntime
+        echo show files
+        ls -la
       
     -
      name: Login to Docker Hub
