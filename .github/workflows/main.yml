@@ -18,8 +18,14 @@ jobs:
       run: echo Hello Docker
       
     - name: Component add in moqui
-      run:
+      run: |
        ./gradlew getComponent -Pcomponent=HiveMind 
+       echo Add WorkManagement
+       git clone https://github.com/xolvegroup/WorkManagement.git
+       echo Add Sales
+       git clone https://github.com/xolvegroup/Sales.git
+       echo Add Xolve Theme
+       git clone git@github.com:xolvegroup/xolve-theme.git
       
     -
      name: Login to Docker Hub
