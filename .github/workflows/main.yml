@@ -24,8 +24,12 @@ jobs:
        git clone https://github.com/xolvegroup/WorkManagement.git
        echo Add Sales
        git clone https://github.com/xolvegroup/Sales.git
-       echo Add Xolve Theme
-       git clone git@github.com:xolvegroup/xolve-theme.git
+       #echo Add Xolve Theme
+       #git clone git@github.com:xolvegroup/xolve-theme.git
+       echo add jar files
+       cd runtime/lib/
+       echo Download Jar files
+       wget https://jdbc.postgresql.org/download/postgresql-42.2.9.jar
       
     -
      name: Login to Docker Hub
