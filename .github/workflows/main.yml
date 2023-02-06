@@ -19,8 +19,8 @@ jobs:
       
     - name: Component add in moqui
       run: |
-       echo Moqui Clone
-       git clone https://github.com/growerp/moqui-framework.git prodxolve && cd prodxolve
+       #echo Moqui Clone
+       #git clone https://github.com/growerp/moqui-framework.git prodxolve && cd prodxolve
        ./gradlew getComponent -Pcomponent=HiveMind 
        echo Add WorkManagement
        git clone https://github.com/xolvegroup/WorkManagement.git
