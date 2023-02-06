@@ -19,6 +19,8 @@ jobs:
       
     - name: Component add in moqui
       run: |
+       echo Moqui Clone
+       git clone https://github.com/growerp/moqui-framework.git prodxolve && cd prodxolve
        ./gradlew getComponent -Pcomponent=HiveMind 
        echo Add WorkManagement
        git clone https://github.com/xolvegroup/WorkManagement.git
@@ -50,14 +52,10 @@ jobs:
       username: ${{ secrets.DOCKERHUB_USERNAME }}
       password: ${{ secrets.DOCKERHUB_TOKEN }}   
     -
-        name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
-    -
         name: Build and push
         uses: docker/build-push-action@v3
         with:
-          context: .
-          file: ./docker-build.sh
+          file: ./Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/moquiprod:latest  
       
