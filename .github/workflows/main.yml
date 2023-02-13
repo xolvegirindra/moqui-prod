@@ -43,7 +43,7 @@ jobs:
         echo show files
         ls -la
         
-   build-container:    
+  build-container:    
      name: Build Docker conagtiner image
      steps:
        - name: Checkout code
