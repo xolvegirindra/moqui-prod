@@ -21,6 +21,7 @@ jobs:
       run: |
        ./gradlew getComponent -Pcomponent=HiveMind 
        echo Add WorkManagement
+       cd /home/runner/work/moqui-prod/moqui-prod/runtime/component/
        git clone https://github.com/xolvegroup/WorkManagement.git
        echo Add Sales
        git clone https://github.com/xolvegroup/Sales.git
@@ -52,15 +53,5 @@ jobs:
          with:
            username: ${{ secrets.DOCKERHUB_USERNAME }}
            password: ${{ secrets.DOCKERHUB_TOKEN }}   
-    
-       - name: Build and push
-         uses: docker/build-push-action@v1
-         with:
-          run: |
-           echo go to moqui
-           cd 
-          file: ./Dockerfile
-          push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/moquiprod:latest  
       
    
