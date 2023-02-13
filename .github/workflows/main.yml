@@ -21,11 +21,13 @@ jobs:
       run: |
        ./gradlew getComponent -Pcomponent=HiveMind 
        echo Add WorkManagement
-       git clone https://github.com/xolvegroup/WorkManagement.git /runtime/component/
+       cd /runtime/component
+       git clone https://github.com/xolvegroup/WorkManagement.git
        echo Add Sales
-       git clone https://github.com/xolvegroup/Sales.git /runtime/component/
+       cd /runtime/component
+       git clone https://github.com/xolvegroup/Sales.git
        #echo Add Xolve Theme
-       #git clone git@github.com:xolvegroup/xolve-theme.git /runtime/component/
+       #git clone git@github.com:xolvegroup/xolve-theme.git
        echo add jar files
        cd runtime/lib/
        echo Download Jar files
