@@ -43,8 +43,6 @@ jobs:
         ./gradlew addRuntime
         echo show files
         ls -la
-        echo show path
-        pwd
         
         
       
