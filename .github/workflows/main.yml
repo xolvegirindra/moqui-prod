@@ -17,7 +17,7 @@ jobs:
     - name: Build the Docker image
       run: echo Hello Docker
       
-    - name: Component add in moqui
+    - name: Components add in moqui
       run: |
        ./gradlew getComponent -Pcomponent=HiveMind 
        echo Add WorkManagement
@@ -44,20 +44,7 @@ jobs:
         ls -la
         
         
-     
-       steps:
-       - name: Checkout code
-         uses: actions/checkout@v2
-       - name: Publish to Github Packages
-         uses: docker/build-push-action@v1
-         with:
-           username: ${{ github.actor }}
-           password: ${{ secret.GITHUB_TOKEN }}
-           registry: docker.pkg.github.com
-           repository: ${{ github.repository }}/moquiprod
-           tag: latest, ${{ github.run_number }}
       
-    
        - name: Login to Docker Hub
          uses: docker/login-action@v2
          with:
@@ -67,6 +54,9 @@ jobs:
        - name: Build and push
          uses: docker/build-push-action@v1
          with:
+          run: |
+           echo go to moqui
+           cd 
           file: ./Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/moquiprod:latest  
